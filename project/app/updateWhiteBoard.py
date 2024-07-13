@@ -10,4 +10,8 @@ def handleUpdatingCardsPostion(data):
     print(data)   
     emit("handleCardPosition", data, broadcast = True, )
 
-
+@socket.on("handleOnNodeCreate")
+def handleOnNodeCreate(data):
+    if not data: return
+    print("handleOnNodeCreate", data)
+    emit("handleOnNodeCreate", data, broadcast=True)
