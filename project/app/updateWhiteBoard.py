@@ -15,3 +15,15 @@ def handleOnNodeCreate(data):
     if not data: return
     print("handleOnNodeCreate", data)
     emit("handleOnNodeCreate", data, broadcast=True)
+
+@socket.on("handleOnDeleteNode")
+def handleONdelete(id):
+    if not id: return 
+    print("id if the node: ", id)
+    emit("handleOnDeleteNode", id, broadcast = True)
+
+
+@socket.on("handlePropsChange")
+def handlePropsChange(data):
+    print("changed props of the node is: ",data)
+    emit("handlePropsChange", data)
