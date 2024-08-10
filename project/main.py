@@ -1,6 +1,9 @@
 from app import create_app
 from app.socket import socket
 from flask_socketio import emit
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = create_app()
 @socket.on("message")
